@@ -1,0 +1,87 @@
+// PrintMe — Prisma schema
+// Docs: https://pris.ly/d/prisma-schema
+
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+  url      = env("DATABASE_URL")
+}
+
+enum ProductType {
+  TSHIRT
+  HOODIE
+}
+
+enum DesignSource {
+  AI
+  UPLOAD
+}
+
+enum OrderStatus {
+  NEW
+  CONFIRMED
+  PRINTING
+  READY
+  DELIVERED
+}
+
+/// Base products available for customization (T-shirt, Hoodie).
+model Product {
+  id        String      @id @default(cuid())
+  type      ProductType @unique
+  nameRu    String
+  nameTg    String
+  basePrice Int // base price in minor currency units (e.g. dirams/cents)
+  colors    String[] // available colors as hex strings
+  sizes     String[] // available sizes, e.g. ["S","M","L","XL"]
+  createdAt DateTime    @default(now())
+}
+
+/// Curated example designs shown in the catalog.
+model CatalogItem {
+  id        String   @id @default(cuid())
+  title     String
+  promptRu  String
+  promptTg  String
+  mockupUrl String
+  order     Int      @default(0)
+  createdAt DateTime @default(now())
+}
+
+/// A concrete design produced by a user (AI generated or uploaded).
+model Design {
+  id        String       @id @default(cuid())
+  source    DesignSource
+  prompt    String?
+  style     String?
+  printUrl  String // transparent PNG of the print (print-ready)
+  mockupUrl String // rendered final mockup
+  transform Json // { x, y, scale, rotation, printSize }
+  createdAt DateTime     @default(now())
+
+  order Order?
+}
+
+/// A customer order tied to a single design.
+model Order {
+  id          String      @id @default(cuid())
+  design      Design      @relation(fields: [designId], references: [id])
+  designId    String      @unique
+  productType ProductType
+  color       String
+  size        String
+  price       Int
+
+  // Contact details (no online payment in MVP — manager follows up)
+  name     String
+  phone    String
+  telegram String
+  address  String
+
+  status    OrderStatus @default(NEW)
+  createdAt DateTime    @default(now())
+  updatedAt DateTime    @updatedAt
+}
