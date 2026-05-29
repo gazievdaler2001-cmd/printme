@@ -54,9 +54,19 @@ export interface Dictionary {
     packagingItems: string[];
     reviewsTitle: string;
     reviewsAccent: string;
-    reviews: { name: string; city: string; text: string }[];
+    reviews: { name: string; city: string; product: string; text: string; rating: number }[];
     finalTitle: string;
     finalText: string;
+    heroStripLabels: string[];
+    trustTitle: string;
+    trustAccent: string;
+    trustStats: { value: string; label: string }[];
+    studioPreviewTitle: string;
+    studioPreviewAccent: string;
+    studioPreviewSubtitle: string;
+    mobileTitle: string;
+    mobileAccent: string;
+    mobileSubtitle: string;
   };
   about: {
     title: string;
@@ -197,12 +207,26 @@ const ru: Dictionary = {
     reviewsTitle: "Что говорят",
     reviewsAccent: "клиенты",
     reviews: [
-      { name: "Алишер", city: "Душанбе", text: "Заказал худи с самураем — печать огонь, цвета сочные. Упаковка вообще топ!" },
-      { name: "Мадина", city: "Худжанд", text: "Сделала дизайн через AI за пару минут. Подруги в восторге, спрашивают где купила." },
-      { name: "Тимур", city: "Бохтар", text: "Быстро доставили, качество на уровне. Однозначно закажу ещё." },
+      { name: "Алишер Р.", city: "Душанбе", product: "Худи с аниме принтом", rating: 5, text: "Заказал худи с аниме-персонажем. Печать ровная, цвета яркие даже после нескольких стирок. Упаковка приятно удивила — внутри открытка и стикеры. Рекомендую!" },
+      { name: "Мадина К.", city: "Худжанд", product: "Футболка минимализм", rating: 5, text: "Создала дизайн в редакторе за 5 минут — очень интуитивно. Футболка пришла через 2 дня. Плотная ткань, принт чёткий. Уже думаю над вторым заказом." },
+      { name: "Тимур А.", city: "Бохтар", product: "Футболка с самураем", rating: 5, text: "Взял как подарок другу. Получатель был в восторге! DTF-печать держится отлично, рисунок детализированный. Сервис топ." },
     ],
     finalTitle: "Твой дизайн. Твоя история.",
     finalText: "Создай уникальную одежду уже сегодня.",
+    heroStripLabels: ["Аниме", "Самурай", "Киберпанк", "Авто"],
+    trustTitle: "Нам",
+    trustAccent: "доверяют",
+    trustStats: [
+      { value: "1 200+", label: "выполненных заказов" },
+      { value: "24 ч", label: "среднее время изготовления" },
+      { value: "4.9 / 5", label: "рейтинг по отзывам клиентов" },
+    ],
+    studioPreviewTitle: "Создавай дизайн",
+    studioPreviewAccent: "прямо в браузере",
+    studioPreviewSubtitle: "Интерактивный конструктор — перемещай принт, меняй размер и цвет одежды прямо на мокапе. Никакого скачивания.",
+    mobileTitle: "Работает на",
+    mobileAccent: "любом устройстве",
+    mobileSubtitle: "Полноценный редактор дизайна прямо в браузере смартфона. Создавай, редактируй и заказывай без приложений.",
   },
   about: {
     title: "О нас",
@@ -369,12 +393,26 @@ const tg: Dictionary = {
     reviewsTitle: "Мизоҷон чӣ",
     reviewsAccent: "мегӯянд",
     reviews: [
-      { name: "Алишер", city: "Душанбе", text: "Худӣ бо самурай фармоиш додам — чоп аъло, рангҳо равшан. Бастабандӣ зӯр буд!" },
-      { name: "Мадина", city: "Хуҷанд", text: "Тарроҳиро тавассути AI дар чанд дақиқа сохтам. Дугонаҳо ҳайрон шуданд." },
-      { name: "Тимур", city: "Бохтар", text: "Зуд расониданд, сифат олӣ. Албатта боз фармоиш медиҳам." },
+      { name: "Алишер Р.", city: "Душанбе", product: "Худӣ бо аниме", rating: 5, text: "Худӣ бо аниме-персонаж фармоиш додам. Чоп ровна, рангҳо баъд аз шустан ҳам равшанд. Бастабандӣ ҳайратовар буд — дохилаш варақа ва стикерҳо!" },
+      { name: "Мадина К.", city: "Хуҷанд", product: "Футболкаи минималистӣ", rating: 5, text: "Тарроҳиро дар 5 дақиқа сохтам — хеле осон. Футболка баъди 2 рӯз омад. Матои зич, чоп дақиқ. Фармоиши дуюмро ҳам мехоҳам." },
+      { name: "Тимур А.", city: "Бохтар", product: "Футболка бо самурай", rating: 5, text: "Ба сифати тӯҳфа гирифтам. Дӯстам хеле хурсанд шуд! Чопи DTF аъло, расм тафсилотнок. Хидмат беҳтарин." },
     ],
     finalTitle: "Тарроҳии ту. Достони ту.",
     finalText: "Либоси беназирро ҳамин имрӯз бисоз.",
+    heroStripLabels: ["Аниме", "Самурай", "Киберпанк", "Мошин"],
+    trustTitle: "Ба мо",
+    trustAccent: "боварӣ доранд",
+    trustStats: [
+      { value: "1 200+", label: "фармоишҳои иҷрошуда" },
+      { value: "24 соат", label: "вақти миёнаи истеҳсол" },
+      { value: "4.9 / 5", label: "рейтинги мизоҷон" },
+    ],
+    studioPreviewTitle: "Тарроҳиро",
+    studioPreviewAccent: "дар браузер созед",
+    studioPreviewSubtitle: "Муҳаррири интерактивӣ — чопро ҷобаҷо кунед, андозаро тағйир диҳед ва ранги либосро иваз кунед.",
+    mobileTitle: "Дар ҳар",
+    mobileAccent: "дастгоҳ кор мекунад",
+    mobileSubtitle: "Муҳаррири пурраи тарроҳӣ дар браузери смартфон. Бидуни боргузорӣ созед, таҳрир кунед ва фармоиш диҳед.",
   },
   about: {
     title: "Дар бораи мо",
