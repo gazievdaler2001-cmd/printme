@@ -20,9 +20,22 @@ const ctx = await browser.newContext({
 });
 const page = await ctx.newPage();
 
+async function autoScroll() {
+  const height = await page.evaluate(() => document.body.scrollHeight);
+  const vh = 900;
+  for (let pos = 0; pos <= height; pos += Math.round(vh * 0.6)) {
+    await page.evaluate((y) => window.scrollTo(0, y), pos);
+    await page.waitForTimeout(350); // let IntersectionObserver + animation fire
+  }
+  await page.evaluate(() => window.scrollTo(0, document.body.scrollHeight));
+  await page.waitForTimeout(800);
+  await page.evaluate(() => window.scrollTo(0, 0));
+  await page.waitForTimeout(600);
+}
+
 for (const [name, path] of pages) {
   await page.goto(BASE + path, { waitUntil: "networkidle", timeout: 60000 }).catch(() => {});
-  await page.waitForTimeout(1500);
+  await autoScroll(); // trigger framer-motion whileInView reveals
   await page.screenshot({ path: `/tmp/${name}.png`, fullPage: true });
   console.log("shot", name);
 }

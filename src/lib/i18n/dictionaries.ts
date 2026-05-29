@@ -34,6 +34,8 @@ export interface Dictionary {
     heroTitle1: string;
     heroAccent: string;
     heroSubtitle: string;
+    ctaPrimary: string;
+    ctaSecondary: string;
     aiEditorLabel: string;
     aiEditorPlaceholder: string;
     aiEditorPrompt: string;
@@ -41,11 +43,20 @@ export interface Dictionary {
     howTitle: string;
     howAccent: string;
     steps: { title: string; desc: string }[];
-    inspireTitle: string;
-    inspireAccent: string;
-    features: { title: string; desc: string }[];
-    socialTitle: string;
-    socialSubtitle: string;
+    examplesTitle: string;
+    examplesAccent: string;
+    examples: string[];
+    advantagesTitle: string;
+    advantagesAccent: string;
+    advantages: { title: string; desc: string }[];
+    packagingTitle: string;
+    packagingText: string;
+    packagingItems: string[];
+    reviewsTitle: string;
+    reviewsAccent: string;
+    reviews: { name: string; city: string; text: string }[];
+    finalTitle: string;
+    finalText: string;
   };
   about: {
     title: string;
@@ -150,31 +161,48 @@ const ru: Dictionary = {
     writeUs: "Написать нам",
   },
   home: {
-    heroTitle1: "Создай свой",
-    heroAccent: "уникальный дизайн",
+    heroTitle1: "Создай свой уникальный",
+    heroAccent: "дизайн одежды",
     heroSubtitle:
-      "Загрузи фото, измени его с помощью ИИ или создай с нуля и закажи печать на футболке или худи",
+      "Загрузи фото, измени его с помощью AI или создай изображение с нуля. Смотри результат на футболке или худи и заказывай печать.",
+    ctaPrimary: "Создать дизайн",
+    ctaSecondary: "Посмотреть примеры",
     aiEditorLabel: "AI-редактор",
     aiEditorPlaceholder: "Опиши, что хочешь изменить",
     aiEditorPrompt: "Добавь неоновый эффект",
     generate: "Сгенерировать",
-    howTitle: "Как создать свой",
-    howAccent: "дизайн?",
+    howTitle: "Как это",
+    howAccent: "работает",
     steps: [
-      { title: "1. Загрузи", desc: "своё фото или выбери шаблон" },
-      { title: "2. Редактируй", desc: "с помощью ИИ или инструментов" },
-      { title: "3. Выбери", desc: "размер, цвет и расположение" },
-      { title: "4. Оформи заказ", desc: "мы изготовим и доставим" },
+      { title: "Загрузи фото или напиши идею", desc: "Начни с фотографии или текстового описания" },
+      { title: "AI создаст или изменит изображение", desc: "Искусственный интеллект сделает всё за секунды" },
+      { title: "Размести дизайн на одежде", desc: "Настрой положение, размер и цвет принта" },
+      { title: "Получи готовый заказ", desc: "Мы напечатаем, упакуем и доставим" },
     ],
-    inspireTitle: "Вдохновись",
-    inspireAccent: "дизайнами",
-    features: [
-      { title: "Премиум качество", desc: "Используем лучшие материалы и стойкие принты" },
-      { title: "Упаковка с эмоцией", desc: "Каждый заказ упакован с любовью и вниманием" },
+    examplesTitle: "Примеры",
+    examplesAccent: "дизайнов",
+    examples: ["Самурай", "Аниме", "Космос", "Машины", "Минимализм", "Горы"],
+    advantagesTitle: "Почему",
+    advantagesAccent: "PrintMe",
+    advantages: [
+      { title: "AI генерация", desc: "Создание дизайна за минуты" },
+      { title: "Премиальная печать", desc: "Красивые цвета и высокая детализация" },
       { title: "Быстрая доставка", desc: "Доставка по городу каждый день" },
+      { title: "Упаковка с эмоцией", desc: "Каждый заказ выглядит как подарок" },
     ],
-    socialTitle: "Отмечай нас в соцсетях и получай скидки",
-    socialSubtitle: "Твой стиль достоин быть увиденным",
+    packagingTitle: "Распаковка как часть эмоции",
+    packagingText:
+      "Мы хотим, чтобы распаковка была частью эмоции. Коробка, стикеры, thank you card и QR на наши соцсети — каждый заказ выглядит как подарок.",
+    packagingItems: ["Thank you card", "Стикеры", "QR Instagram", "QR Telegram"],
+    reviewsTitle: "Что говорят",
+    reviewsAccent: "клиенты",
+    reviews: [
+      { name: "Алишер", city: "Душанбе", text: "Заказал худи с самураем — печать огонь, цвета сочные. Упаковка вообще топ!" },
+      { name: "Мадина", city: "Худжанд", text: "Сделала дизайн через AI за пару минут. Подруги в восторге, спрашивают где купила." },
+      { name: "Тимур", city: "Бохтар", text: "Быстро доставили, качество на уровне. Однозначно закажу ещё." },
+    ],
+    finalTitle: "Твой дизайн. Твоя история.",
+    finalText: "Создай уникальную одежду уже сегодня.",
   },
   about: {
     title: "О нас",
@@ -305,31 +333,48 @@ const tg: Dictionary = {
     writeUs: "Ба мо нависед",
   },
   home: {
-    heroTitle1: "Тарроҳии худро",
-    heroAccent: "беназир созед",
+    heroTitle1: "Тарроҳии беназири",
+    heroAccent: "либоси худро бисоз",
     heroSubtitle:
-      "Расмро бор кунед, онро бо ёрии СИ тағйир диҳед ё аз нав созед ва чопро дар футболка ё худӣ фармоиш диҳед",
+      "Расмро бор кун, онро бо ёрии AI тағйир деҳ ё аз нав бисоз. Натиҷаро дар футболка ё худӣ бубин ва чопро фармоиш деҳ.",
+    ctaPrimary: "Тарроҳӣ сохтан",
+    ctaSecondary: "Намунаҳоро дидан",
     aiEditorLabel: "AI-муҳаррир",
-    aiEditorPlaceholder: "Тавсиф кунед, ки чиро тағйир додан мехоҳед",
+    aiEditorPlaceholder: "Тавсиф кун, ки чиро тағйир додан мехоҳӣ",
     aiEditorPrompt: "Эффекти неонӣ илова кун",
     generate: "Эҷод кардан",
-    howTitle: "Чӣ тавр тарроҳии худро",
-    howAccent: "созед?",
+    howTitle: "Чӣ тавр кор",
+    howAccent: "мекунад",
     steps: [
-      { title: "1. Бор кунед", desc: "расми худро ё қолибро интихоб кунед" },
-      { title: "2. Таҳрир кунед", desc: "бо ёрии СИ ё асбобҳо" },
-      { title: "3. Интихоб кунед", desc: "андоза, ранг ва ҷойгиршавӣ" },
-      { title: "4. Фармоиш диҳед", desc: "мо месозем ва мерасонем" },
+      { title: "Расм бор кун ё идея нависед", desc: "Аз расм ё тавсифи матнӣ оғоз кунед" },
+      { title: "AI тасвирро месозад ё тағйир медиҳад", desc: "Зеҳни сунъӣ ҳама чизро дар сонияҳо мекунад" },
+      { title: "Тарроҳиро дар либос ҷойгир кун", desc: "Мавқеъ, андоза ва ранги чопро танзим кунед" },
+      { title: "Фармоиши тайёрро бигир", desc: "Мо чоп, баста ва мерасонем" },
     ],
-    inspireTitle: "Аз тарроҳиҳо",
-    inspireAccent: "илҳом гиред",
-    features: [
-      { title: "Сифати олӣ", desc: "Маводи беҳтарин ва чопҳои устувор" },
-      { title: "Бастабандии хотирмон", desc: "Ҳар фармоиш бо муҳаббат баста мешавад" },
+    examplesTitle: "Намунаҳои",
+    examplesAccent: "тарроҳӣ",
+    examples: ["Самурай", "Аниме", "Кайҳон", "Мошинҳо", "Минимализм", "Кӯҳҳо"],
+    advantagesTitle: "Чаро",
+    advantagesAccent: "PrintMe",
+    advantages: [
+      { title: "AI эҷод", desc: "Сохтани тарроҳӣ дар чанд дақиқа" },
+      { title: "Чопи олӣ", desc: "Рангҳои зебо ва тафсилоти баланд" },
       { title: "Расонидани тез", desc: "Расонидан дар шаҳр ҳар рӯз" },
+      { title: "Бастабандии хотирмон", desc: "Ҳар фармоиш мисли тӯҳфа аст" },
     ],
-    socialTitle: "Моро дар шабакаҳо қайд кунед ва тахфиф гиред",
-    socialSubtitle: "Услуби шумо сазовори дида шудан аст",
+    packagingTitle: "Кушодани баста қисми эҳсос аст",
+    packagingText:
+      "Мо мехоҳем, ки кушодани баста қисми эҳсос бошад. Қуттӣ, стикерҳо, thank you card ва QR ба шабакаҳои мо — ҳар фармоиш мисли тӯҳфа аст.",
+    packagingItems: ["Thank you card", "Стикерҳо", "QR Instagram", "QR Telegram"],
+    reviewsTitle: "Мизоҷон чӣ",
+    reviewsAccent: "мегӯянд",
+    reviews: [
+      { name: "Алишер", city: "Душанбе", text: "Худӣ бо самурай фармоиш додам — чоп аъло, рангҳо равшан. Бастабандӣ зӯр буд!" },
+      { name: "Мадина", city: "Хуҷанд", text: "Тарроҳиро тавассути AI дар чанд дақиқа сохтам. Дугонаҳо ҳайрон шуданд." },
+      { name: "Тимур", city: "Бохтар", text: "Зуд расониданд, сифат олӣ. Албатта боз фармоиш медиҳам." },
+    ],
+    finalTitle: "Тарроҳии ту. Достони ту.",
+    finalText: "Либоси беназирро ҳамин имрӯз бисоз.",
   },
   about: {
     title: "Дар бораи мо",
