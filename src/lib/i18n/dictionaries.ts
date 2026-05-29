@@ -11,25 +11,114 @@ export interface Dictionary {
     about: string;
     shipping: string;
     cart: string;
-  };
-  home: {
-    heroTitle: string;
-    heroSubtitle: string;
-    heroCta: string;
-    howItWorks: string;
-    advantages: string;
-    examples: string;
-    packaging: string;
-    reviews: string;
+    login: string;
   };
   common: {
+    createDesign: string;
     createSimilar: string;
     addToCart: string;
+    saveDesign: string;
+    viewAll: string;
+    showMore: string;
     price: string;
     color: string;
     size: string;
     printSize: string;
     soon: string;
+    fast: string;
+    simple: string;
+    unique: string;
+    writeUs: string;
+  };
+  home: {
+    heroTitle1: string;
+    heroAccent: string;
+    heroSubtitle: string;
+    aiEditorLabel: string;
+    aiEditorPlaceholder: string;
+    aiEditorPrompt: string;
+    generate: string;
+    howTitle: string;
+    howAccent: string;
+    steps: { title: string; desc: string }[];
+    inspireTitle: string;
+    inspireAccent: string;
+    features: { title: string; desc: string }[];
+    socialTitle: string;
+    socialSubtitle: string;
+  };
+  about: {
+    title: string;
+    headline1: string;
+    headlineAccent1: string;
+    headline2: string;
+    headlineAccent2: string;
+    headline3: string;
+    description: string;
+    values: { title: string; desc: string }[];
+    timelineTitle: string;
+    timeline: { year: string; title: string; desc: string }[];
+    teamTitle: string;
+    teamSubtitle: string;
+    team: { name: string; role: string; desc: string }[];
+    ctaTitle: string;
+    ctaSubtitle: string;
+  };
+  catalog: {
+    title: string;
+    subtitle: string;
+    promoTitle: string;
+    promoSubtitle: string;
+    tabs: string[];
+    sort: string;
+    filterType: string;
+    filterColor: string;
+    filterSize: string;
+    filterPrice: string;
+    sizeTable: string;
+    notFoundTitle: string;
+    notFoundSubtitle: string;
+    currency: string;
+  };
+  studio: {
+    aiTab: string;
+    simpleTab: string;
+    aiTitle: string;
+    promptLabel: string;
+    promptPlaceholder: string;
+    styleTitle: string;
+    styles: string[];
+    ratioTitle: string;
+    generationsLeft: string;
+    or: string;
+    uploadImage: string;
+    uploadHint: string;
+    rail: string[];
+    save: string;
+    download: string;
+    previewColors: string;
+    productColor: string;
+    productSize: string;
+    printPosition: string;
+    total: string;
+    currency: string;
+    features: { title: string; desc: string }[];
+  };
+  shipping: {
+    title: string;
+    subtitle: string;
+    blocks: { title: string; desc: string }[];
+  };
+  footer: {
+    tagline: string;
+    menu: string;
+    help: string;
+    socials: string;
+    faq: string;
+    returns: string;
+    terms: string;
+    privacy: string;
+    rights: string;
   };
 }
 
@@ -41,26 +130,150 @@ const ru: Dictionary = {
     about: "О нас",
     shipping: "Доставка и оплата",
     cart: "Корзина",
-  },
-  home: {
-    heroTitle: "Создай свой дизайн с помощью ИИ",
-    heroSubtitle:
-      "Опиши идею — увидь её на футболке или худи за секунды. Мы напечатаем и доставим.",
-    heroCta: "Создать дизайн",
-    howItWorks: "Как это работает",
-    advantages: "Преимущества",
-    examples: "Примеры дизайнов",
-    packaging: "Упаковка, которой хочется делиться",
-    reviews: "Отзывы",
+    login: "Войти",
   },
   common: {
+    createDesign: "Создать дизайн",
     createSimilar: "Создать такой дизайн",
     addToCart: "Добавить в корзину",
+    saveDesign: "Сохранить дизайн",
+    viewAll: "Смотреть все",
+    showMore: "Показать ещё",
     price: "Цена",
-    color: "Цвет одежды",
-    size: "Размер одежды",
+    color: "Цвет изделия",
+    size: "Размер",
     printSize: "Размер принта",
     soon: "Скоро",
+    fast: "Быстро",
+    simple: "Просто",
+    unique: "Уникально",
+    writeUs: "Написать нам",
+  },
+  home: {
+    heroTitle1: "Создай свой",
+    heroAccent: "уникальный дизайн",
+    heroSubtitle:
+      "Загрузи фото, измени его с помощью ИИ или создай с нуля и закажи печать на футболке или худи",
+    aiEditorLabel: "AI-редактор",
+    aiEditorPlaceholder: "Опиши, что хочешь изменить",
+    aiEditorPrompt: "Добавь неоновый эффект",
+    generate: "Сгенерировать",
+    howTitle: "Как создать свой",
+    howAccent: "дизайн?",
+    steps: [
+      { title: "1. Загрузи", desc: "своё фото или выбери шаблон" },
+      { title: "2. Редактируй", desc: "с помощью ИИ или инструментов" },
+      { title: "3. Выбери", desc: "размер, цвет и расположение" },
+      { title: "4. Оформи заказ", desc: "мы изготовим и доставим" },
+    ],
+    inspireTitle: "Вдохновись",
+    inspireAccent: "дизайнами",
+    features: [
+      { title: "Премиум качество", desc: "Используем лучшие материалы и стойкие принты" },
+      { title: "Упаковка с эмоцией", desc: "Каждый заказ упакован с любовью и вниманием" },
+      { title: "Быстрая доставка", desc: "Доставка по городу каждый день" },
+    ],
+    socialTitle: "Отмечай нас в соцсетях и получай скидки",
+    socialSubtitle: "Твой стиль достоин быть увиденным",
+  },
+  about: {
+    title: "О нас",
+    headline1: "Мы превращаем ваши",
+    headlineAccent1: "идеи",
+    headline2: "в",
+    headlineAccent2: "уникальные",
+    headline3: "вещи",
+    description:
+      "PrintMe — это сервис кастомной печати на одежде. Вы создаёте дизайн — мы печатаем, упаковываем и доставляем с заботой.",
+    values: [
+      { title: "Уникальность", desc: "Каждый дизайн создаётся специально для вас" },
+      { title: "Качество", desc: "Используем лучшие материалы и стойкие принты" },
+      { title: "Забота", desc: "Упаковываем с любовью и доставляем вовремя" },
+    ],
+    timelineTitle: "Наш путь",
+    timeline: [
+      { year: "2022", title: "Идея", desc: "Мы начали с простой идеи — дать каждому возможность носить то, что он создал сам." },
+      { year: "2023", title: "Первые принты", desc: "Напечатали наши первые заказы и поняли, что движемся в правильном направлении." },
+      { year: "2024", title: "Тысячи клиентов", desc: "Больше клиентов, больше идей и ещё больше уникальных дизайнов каждый день." },
+      { year: "2025 и дальше", title: "С вами", desc: "Мы продолжаем расти, улучшать сервис и радовать вас каждый день." },
+    ],
+    teamTitle: "Наша команда",
+    teamSubtitle: "Небольшая команда, которая делает большое дело",
+    team: [
+      { name: "Азамат", role: "Основатель", desc: "Отвечает за идею, стратегию и развитие сервиса." },
+      { name: "Малика", role: "Дизайн и продукт", desc: "Делает так, чтобы создавать дизайны было легко и приятно." },
+      { name: "Нурлан", role: "Производство", desc: "Следит за качеством печати и материалами." },
+      { name: "Айгерим", role: "Забота о клиентах", desc: "Всегда на связи и готова помочь с вашим заказом." },
+      { name: "Данияр", role: "Логистика", desc: "Организует доставку, чтобы всё было вовремя." },
+    ],
+    ctaTitle: "Спасибо, что вы с нами!",
+    ctaSubtitle: "Каждый ваш заказ — это вдохновение для нас становиться лучше.",
+  },
+  catalog: {
+    title: "Каталог товаров",
+    subtitle: "Выбери товар и создай свой уникальный дизайн",
+    promoTitle: "Скидка 10% на первый заказ",
+    promoSubtitle: "Создай дизайн прямо сейчас",
+    tabs: ["Все товары", "Футболки", "Худи", "Свитшоты", "Лонгсливы", "Оверсайз", "Детские"],
+    sort: "Сначала популярные",
+    filterType: "Тип товара",
+    filterColor: "Цвет",
+    filterSize: "Размер",
+    filterPrice: "Цена",
+    sizeTable: "Таблица размеров",
+    notFoundTitle: "Не нашёл, что искал?",
+    notFoundSubtitle: "Напиши нам, и мы добавим нужный товар в каталог",
+    currency: "сом",
+  },
+  studio: {
+    aiTab: "AI-редактор",
+    simpleTab: "Простой редактор",
+    aiTitle: "Создать с помощью ИИ",
+    promptLabel: "Опишите, что хотите создать",
+    promptPlaceholder: "Киберпанк город с неоновыми огнями, ночь, дождь",
+    styleTitle: "Стиль изображения",
+    styles: ["Киберпанк", "Аниме", "Реализм", "Минимализм", "Абстракция", "Фэнтези"],
+    ratioTitle: "Соотношение сторон",
+    generationsLeft: "Осталось генераций:",
+    or: "или",
+    uploadImage: "Загрузить изображение",
+    uploadHint: "JPG, PNG, до 10MB",
+    rail: ["Дизайн", "Текст", "Загрузки", "Иконки", "Фильтры", "AI-редактор"],
+    save: "Сохранить",
+    download: "Скачать",
+    previewColors: "Предпросмотр в других цветах",
+    productColor: "Цвет изделия",
+    productSize: "Размер",
+    printPosition: "Позиция и размер принта",
+    total: "Итого",
+    currency: "сомони",
+    features: [
+      { title: "Премиум качество", desc: "Стойкие принты и лучшие материалы" },
+      { title: "Удобная доставка", desc: "По городу каждый день" },
+      { title: "Упаковка с эмоцией", desc: "Каждый заказ как подарок" },
+      { title: "Нужна помощь?", desc: "Мы на связи 24/7" },
+    ],
+  },
+  shipping: {
+    title: "Доставка и оплата",
+    subtitle: "Всё просто и удобно — от заказа до распаковки",
+    blocks: [
+      { title: "Доставка по городу", desc: "Каждый день, обычно 1–3 дня после готовности заказа." },
+      { title: "Доставка по стране", desc: "Отправляем удобной службой, сроки зависят от региона." },
+      { title: "Оплата", desc: "Менеджер свяжется с вами после заказа и подскажет удобный способ оплаты." },
+      { title: "Возврат и обмен", desc: "Поскольку дизайн уникальный, обмен возможен только при браке." },
+    ],
+  },
+  footer: {
+    tagline: "Создавай. Печатай. Выделяйся.",
+    menu: "Меню",
+    help: "Помощь",
+    socials: "Мы в соцсетях",
+    faq: "FAQ",
+    returns: "Возврат и обмен",
+    terms: "Условия использования",
+    privacy: "Политика конфиденциальности",
+    rights: "Все права защищены.",
   },
 };
 
@@ -72,26 +285,150 @@ const tg: Dictionary = {
     about: "Дар бораи мо",
     shipping: "Расонидан ва пардохт",
     cart: "Сабад",
-  },
-  home: {
-    heroTitle: "Тарроҳии худро бо ёрии СИ созед",
-    heroSubtitle:
-      "Идеяро тавсиф кунед — онро дар сонияҳо дар футболка ё худӣ бинед. Мо чоп карда мерасонем.",
-    heroCta: "Сохтани тарроҳӣ",
-    howItWorks: "Чӣ тавр кор мекунад",
-    advantages: "Бартариҳо",
-    examples: "Намунаҳои тарроҳӣ",
-    packaging: "Бастабандие, ки мехоҳед мубодила кунед",
-    reviews: "Шарҳҳо",
+    login: "Ворид шудан",
   },
   common: {
+    createDesign: "Сохтани тарроҳӣ",
     createSimilar: "Чунин тарроҳӣ созед",
     addToCart: "Ба сабад илова кунед",
+    saveDesign: "Тарроҳиро нигоҳ доред",
+    viewAll: "Ҳамаро дидан",
+    showMore: "Бештар нишон додан",
     price: "Нарх",
     color: "Ранги либос",
-    size: "Андозаи либос",
+    size: "Андоза",
     printSize: "Андозаи чоп",
     soon: "Ба зудӣ",
+    fast: "Тез",
+    simple: "Содда",
+    unique: "Беназир",
+    writeUs: "Ба мо нависед",
+  },
+  home: {
+    heroTitle1: "Тарроҳии худро",
+    heroAccent: "беназир созед",
+    heroSubtitle:
+      "Расмро бор кунед, онро бо ёрии СИ тағйир диҳед ё аз нав созед ва чопро дар футболка ё худӣ фармоиш диҳед",
+    aiEditorLabel: "AI-муҳаррир",
+    aiEditorPlaceholder: "Тавсиф кунед, ки чиро тағйир додан мехоҳед",
+    aiEditorPrompt: "Эффекти неонӣ илова кун",
+    generate: "Эҷод кардан",
+    howTitle: "Чӣ тавр тарроҳии худро",
+    howAccent: "созед?",
+    steps: [
+      { title: "1. Бор кунед", desc: "расми худро ё қолибро интихоб кунед" },
+      { title: "2. Таҳрир кунед", desc: "бо ёрии СИ ё асбобҳо" },
+      { title: "3. Интихоб кунед", desc: "андоза, ранг ва ҷойгиршавӣ" },
+      { title: "4. Фармоиш диҳед", desc: "мо месозем ва мерасонем" },
+    ],
+    inspireTitle: "Аз тарроҳиҳо",
+    inspireAccent: "илҳом гиред",
+    features: [
+      { title: "Сифати олӣ", desc: "Маводи беҳтарин ва чопҳои устувор" },
+      { title: "Бастабандии хотирмон", desc: "Ҳар фармоиш бо муҳаббат баста мешавад" },
+      { title: "Расонидани тез", desc: "Расонидан дар шаҳр ҳар рӯз" },
+    ],
+    socialTitle: "Моро дар шабакаҳо қайд кунед ва тахфиф гиред",
+    socialSubtitle: "Услуби шумо сазовори дида шудан аст",
+  },
+  about: {
+    title: "Дар бораи мо",
+    headline1: "Мо идеяҳои шуморо ба",
+    headlineAccent1: "ашёҳои",
+    headline2: "",
+    headlineAccent2: "беназир",
+    headline3: "табдил медиҳем",
+    description:
+      "PrintMe — хидмати чопи фармоишӣ дар либос аст. Шумо тарроҳӣ месозед — мо чоп, баста ва бо ғамхорӣ мерасонем.",
+    values: [
+      { title: "Беназирӣ", desc: "Ҳар тарроҳӣ махсус барои шумо сохта мешавад" },
+      { title: "Сифат", desc: "Маводи беҳтарин ва чопҳои устуворро истифода мебарем" },
+      { title: "Ғамхорӣ", desc: "Бо муҳаббат баста ва саривақт мерасонем" },
+    ],
+    timelineTitle: "Роҳи мо",
+    timeline: [
+      { year: "2022", title: "Идея", desc: "Мо аз идеяи содда оғоз кардем — ба ҳар кас имкони пӯшидани он чиро, ки худаш сохтааст, диҳем." },
+      { year: "2023", title: "Чопҳои аввал", desc: "Фармоишҳои аввалро чоп кардем ва фаҳмидем, ки роҳи дуруст меравем." },
+      { year: "2024", title: "Ҳазорон мизоҷ", desc: "Бештар мизоҷон, бештар идеяҳо ва ҳар рӯз тарроҳиҳои беназир." },
+      { year: "2025 ва минбаъд", title: "Бо шумо", desc: "Мо рушд мекунем, хидматро беҳтар мекунем ва шуморо ҳар рӯз шод мекунем." },
+    ],
+    teamTitle: "Дастаи мо",
+    teamSubtitle: "Дастаи хурд, ки кори бузург мекунад",
+    team: [
+      { name: "Азамат", role: "Асосгузор", desc: "Барои идея, стратегия ва рушди хидмат масъул аст." },
+      { name: "Малика", role: "Тарроҳӣ ва маҳсулот", desc: "Сохтани тарроҳиҳоро осон ва форам мегардонад." },
+      { name: "Нурлан", role: "Истеҳсолот", desc: "Сифати чоп ва маводро назорат мекунад." },
+      { name: "Айгерим", role: "Ғамхории мизоҷон", desc: "Ҳамеша дар тамос ва омодаи кӯмак аст." },
+      { name: "Данияр", role: "Логистика", desc: "Расониданро ташкил мекунад, то ҳама саривақт бошад." },
+    ],
+    ctaTitle: "Ташаккур, ки бо мо ҳастед!",
+    ctaSubtitle: "Ҳар фармоиши шумо барои мо илҳоми беҳтар шудан аст.",
+  },
+  catalog: {
+    title: "Каталоги молҳо",
+    subtitle: "Молро интихоб кунед ва тарроҳии беназири худро созед",
+    promoTitle: "Тахфифи 10% барои фармоиши аввал",
+    promoSubtitle: "Ҳозир тарроҳӣ созед",
+    tabs: ["Ҳама молҳо", "Футболкаҳо", "Худӣ", "Свитшотҳо", "Лонгсливҳо", "Оверсайз", "Кӯдакона"],
+    sort: "Аввал маъмултарин",
+    filterType: "Намуди мол",
+    filterColor: "Ранг",
+    filterSize: "Андоза",
+    filterPrice: "Нарх",
+    sizeTable: "Ҷадвали андозаҳо",
+    notFoundTitle: "Он чиро, ки меҷустед, наёфтед?",
+    notFoundSubtitle: "Ба мо нависед ва мо моли заруриро ба каталог илова мекунем",
+    currency: "сом",
+  },
+  studio: {
+    aiTab: "AI-муҳаррир",
+    simpleTab: "Муҳаррири содда",
+    aiTitle: "Бо ёрии СИ созед",
+    promptLabel: "Тавсиф кунед, ки чӣ сохтан мехоҳед",
+    promptPlaceholder: "Шаҳри киберпанк бо чароғҳои неонӣ, шаб, борон",
+    styleTitle: "Услуби тасвир",
+    styles: ["Киберпанк", "Аниме", "Реализм", "Минимализм", "Абстраксия", "Фэнтези"],
+    ratioTitle: "Таносуби тарафҳо",
+    generationsLeft: "Эҷодҳои боқимонда:",
+    or: "ё",
+    uploadImage: "Тасвирро бор кунед",
+    uploadHint: "JPG, PNG, то 10MB",
+    rail: ["Тарроҳӣ", "Матн", "Боргузориҳо", "Нишонаҳо", "Филтрҳо", "AI-муҳаррир"],
+    save: "Нигоҳ доштан",
+    download: "Боргирӣ",
+    previewColors: "Пешнамоиш дар рангҳои дигар",
+    productColor: "Ранги либос",
+    productSize: "Андоза",
+    printPosition: "Мавқеъ ва андозаи чоп",
+    total: "Ҳамагӣ",
+    currency: "сомонӣ",
+    features: [
+      { title: "Сифати олӣ", desc: "Чопҳои устувор ва маводи беҳтарин" },
+      { title: "Расонидани қулай", desc: "Дар шаҳр ҳар рӯз" },
+      { title: "Бастабандии хотирмон", desc: "Ҳар фармоиш мисли тӯҳфа" },
+      { title: "Кӯмак лозим аст?", desc: "Мо 24/7 дар тамос ҳастем" },
+    ],
+  },
+  shipping: {
+    title: "Расонидан ва пардохт",
+    subtitle: "Ҳама чиз содда ва қулай — аз фармоиш то кушодани баста",
+    blocks: [
+      { title: "Расонидан дар шаҳр", desc: "Ҳар рӯз, одатан 1–3 рӯз пас аз тайёр шудани фармоиш." },
+      { title: "Расонидан дар кишвар", desc: "Бо хидмати қулай мефиристем, мӯҳлат аз минтақа вобаста аст." },
+      { title: "Пардохт", desc: "Менеҷер пас аз фармоиш бо шумо тамос мегирад ва тарзи қулайи пардохтро мегӯяд." },
+      { title: "Бозгашт ва иваз", desc: "Азбаски тарроҳӣ беназир аст, иваз танҳо ҳангоми нуқс имконпазир аст." },
+    ],
+  },
+  footer: {
+    tagline: "Бисоз. Чоп кун. Фарқ кун.",
+    menu: "Меню",
+    help: "Кӯмак",
+    socials: "Мо дар шабакаҳо",
+    faq: "FAQ",
+    returns: "Бозгашт ва иваз",
+    terms: "Шартҳои истифода",
+    privacy: "Сиёсати махфият",
+    rights: "Ҳамаи ҳуқуқҳо ҳифз шудаанд.",
   },
 };
 

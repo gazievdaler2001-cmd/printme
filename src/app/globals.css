@@ -4,14 +4,7 @@
 
 :root {
   --background: #ffffff;
-  --foreground: #0a0a0a;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --foreground: #0f0f12;
 }
 
 html {
@@ -22,9 +15,47 @@ body {
   background: var(--background);
   color: var(--foreground);
   -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
 }
 
-/* Premium, Apple-inspired section spacing helper */
-.section {
-  @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-24;
+@layer components {
+  /* Section container */
+  .section {
+    @apply mx-auto w-full max-w-6xl px-5 py-16 sm:px-8 sm:py-20;
+  }
+
+  /* Primary violet pill button */
+  .btn-primary {
+    @apply inline-flex items-center justify-center gap-2 rounded-full bg-accent px-6 py-3
+      text-sm font-semibold text-white shadow-float transition-all
+      hover:bg-accent-dark hover:scale-[1.02] active:scale-100;
+  }
+
+  /* Outline / secondary button */
+  .btn-outline {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-accent/30
+      bg-white px-6 py-3 text-sm font-semibold text-accent transition-all
+      hover:border-accent hover:bg-accent-soft;
+  }
+
+  .btn-ghost {
+    @apply inline-flex items-center justify-center gap-2 rounded-full border border-black/10
+      bg-white px-5 py-2.5 text-sm font-medium text-ink transition-colors hover:bg-neutral-50;
+  }
+
+  /* Soft violet chip / badge */
+  .chip {
+    @apply inline-flex items-center gap-1.5 rounded-full bg-accent-soft px-3 py-1
+      text-xs font-medium text-accent;
+  }
+
+  /* Card */
+  .card {
+    @apply rounded-2xl border border-black/[.06] bg-white shadow-card;
+  }
+}
+
+/* Accent-colored emphasis word in headings */
+.accent-text {
+  color: #7c3aed;
 }

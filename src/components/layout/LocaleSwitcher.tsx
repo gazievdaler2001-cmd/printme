@@ -21,9 +21,9 @@ export function LocaleSwitcher({ current }: { current: Locale }) {
           type="button"
           onClick={() => switchTo(l)}
           aria-pressed={l === current}
-          className={`rounded-full px-2.5 py-1 transition-colors ${
+          className={`rounded-full px-2.5 py-1 font-medium transition-colors ${
             l === current
-              ? "bg-ink text-white"
+              ? "bg-accent text-white"
               : "text-ink/60 hover:text-ink"
           }`}
         >
