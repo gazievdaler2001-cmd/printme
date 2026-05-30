@@ -36,15 +36,18 @@ export interface Dictionary {
     heroSubtitle: string;
     ctaPrimary: string;
     ctaSecondary: string;
-    aiEditorLabel: string;
-    aiEditorPlaceholder: string;
-    aiEditorPrompt: string;
+    heroFeatures: string[];
+    heroGenLabel: string;
+    heroGenPlaceholder: string;
+    heroColorLabel: string;
+    heroSizeLabel: string;
     generate: string;
     howTitle: string;
     howAccent: string;
     steps: { title: string; desc: string }[];
     examplesTitle: string;
     examplesAccent: string;
+    examplesViewAll: string;
     examples: string[];
     advantagesTitle: string;
     advantagesAccent: string;
@@ -52,21 +55,13 @@ export interface Dictionary {
     packagingTitle: string;
     packagingText: string;
     packagingItems: string[];
+    stats: { value: string; label: string }[];
     reviewsTitle: string;
     reviewsAccent: string;
-    reviews: { name: string; city: string; product: string; text: string; rating: number }[];
+    reviewsViewAll: string;
+    reviews: { name: string; handle: string; product: string; text: string; rating: number }[];
     finalTitle: string;
     finalText: string;
-    heroStripLabels: string[];
-    trustTitle: string;
-    trustAccent: string;
-    trustStats: { value: string; label: string }[];
-    studioPreviewTitle: string;
-    studioPreviewAccent: string;
-    studioPreviewSubtitle: string;
-    mobileTitle: string;
-    mobileAccent: string;
-    mobileSubtitle: string;
   };
   about: {
     title: string;
@@ -174,59 +169,60 @@ const ru: Dictionary = {
     heroTitle1: "Создай свой уникальный",
     heroAccent: "дизайн одежды",
     heroSubtitle:
-      "Загрузи фото, измени его с помощью AI или создай изображение с нуля. Смотри результат на футболке или худи и заказывай печать.",
+      "Загрузи фото, напиши идею или доверься AI — мы создадим дизайн, который будет только твоим. Смотри результат на футболке или худи и заказывай печать.",
     ctaPrimary: "Создать дизайн",
     ctaSecondary: "Посмотреть примеры",
-    aiEditorLabel: "AI-редактор",
-    aiEditorPlaceholder: "Опиши, что хочешь изменить",
-    aiEditorPrompt: "Добавь неоновый эффект",
+    heroFeatures: [
+      "AI дизайн за секунды",
+      "Премиум качество печати",
+      "Быстрая доставка",
+      "Лёгкий процесс создания",
+    ],
+    heroGenLabel: "AI генератор",
+    heroGenPlaceholder: "Опиши идею для дизайна…",
+    heroColorLabel: "Цвет футболки",
+    heroSizeLabel: "Размер",
     generate: "Сгенерировать",
     howTitle: "Как это",
     howAccent: "работает",
     steps: [
-      { title: "Загрузи фото или напиши идею", desc: "Начни с фотографии или текстового описания" },
-      { title: "AI создаст или изменит изображение", desc: "Искусственный интеллект сделает всё за секунды" },
-      { title: "Размести дизайн на одежде", desc: "Настрой положение, размер и цвет принта" },
+      { title: "Загрузи фото или напиши идею", desc: "Начни с фотографии или введи описание" },
+      { title: "AI создаст или изменит изображение", desc: "Искусственный интеллект сгенерирует уникальный дизайн" },
+      { title: "Размести дизайн на одежде", desc: "Выбери одежду, цвет и настрой положение" },
       { title: "Получи готовый заказ", desc: "Мы напечатаем, упакуем и доставим" },
     ],
     examplesTitle: "Примеры",
     examplesAccent: "дизайнов",
-    examples: ["Самурай", "Аниме", "Космос", "Машины", "Минимализм", "Горы"],
+    examplesViewAll: "Смотреть все примеры",
+    examples: ["Самурай", "Аниме", "Киберпанк", "Машины", "Горы", "Космос"],
     advantagesTitle: "Почему",
     advantagesAccent: "PrintMe",
     advantages: [
-      { title: "AI генерация", desc: "Создание дизайна за минуты" },
-      { title: "Премиальная печать", desc: "Красивые цвета и высокая детализация" },
-      { title: "Быстрая доставка", desc: "Доставка по городу каждый день" },
-      { title: "Упаковка с эмоцией", desc: "Каждый заказ выглядит как подарок" },
+      { title: "AI генерация", desc: "Уникальные дизайны за несколько секунд" },
+      { title: "Премиальная печать", desc: "Яркие цвета и высокая детализация" },
+      { title: "Быстрая доставка", desc: "Доставляем заказы по городу каждый день" },
+      { title: "Упаковка с эмоцией", desc: "Каждый заказ приходит как подарок" },
     ],
     packagingTitle: "Распаковка как часть эмоции",
     packagingText:
-      "Мы хотим, чтобы распаковка была частью эмоции. Коробка, стикеры, thank you card и QR на наши соцсети — каждый заказ выглядит как подарок.",
+      "Мы уделяем внимание каждой детали. Коробка, стикеры, открытка с благодарностью и QR-код на наши соцсети — каждый заказ приходит как подарок.",
     packagingItems: ["Thank you card", "Стикеры", "QR Instagram", "QR Telegram"],
+    stats: [
+      { value: "2 500+", label: "Довольных клиентов" },
+      { value: "15 000+", label: "Созданных дизайнов" },
+      { value: "24 часа", label: "Среднее время доставки" },
+      { value: "4.9 / 5", label: "Средняя оценка" },
+    ],
     reviewsTitle: "Что говорят",
     reviewsAccent: "клиенты",
+    reviewsViewAll: "Смотреть все отзывы",
     reviews: [
-      { name: "Алишер Р.", city: "Душанбе", product: "Худи с аниме принтом", rating: 5, text: "Заказал худи с аниме-персонажем. Печать ровная, цвета яркие даже после нескольких стирок. Упаковка приятно удивила — внутри открытка и стикеры. Рекомендую!" },
-      { name: "Мадина К.", city: "Худжанд", product: "Футболка минимализм", rating: 5, text: "Создала дизайн в редакторе за 5 минут — очень интуитивно. Футболка пришла через 2 дня. Плотная ткань, принт чёткий. Уже думаю над вторым заказом." },
-      { name: "Тимур А.", city: "Бохтар", product: "Футболка с самураем", rating: 5, text: "Взял как подарок другу. Получатель был в восторге! DTF-печать держится отлично, рисунок детализированный. Сервис топ." },
+      { name: "Алишер", handle: "@alisher_tm", product: "Футболка с самураем", rating: 5, text: "Сделал дизайн за минуту — получил сотни комплиментов. Качество супер!" },
+      { name: "Мадина", handle: "@madina.a", product: "Худи с аниме", rating: 5, text: "Это лучший подарок для моего парня! Он был в восторге." },
+      { name: "Тимур", handle: "@timur.kg", product: "Худи киберпанк", rating: 5, text: "Очень удобный конструктор и быстрая доставка. Буду заказывать ещё!" },
     ],
     finalTitle: "Твой дизайн. Твоя история.",
     finalText: "Создай уникальную одежду уже сегодня.",
-    heroStripLabels: ["Аниме", "Самурай", "Киберпанк", "Авто"],
-    trustTitle: "Нам",
-    trustAccent: "доверяют",
-    trustStats: [
-      { value: "1 200+", label: "выполненных заказов" },
-      { value: "24 ч", label: "среднее время изготовления" },
-      { value: "4.9 / 5", label: "рейтинг по отзывам клиентов" },
-    ],
-    studioPreviewTitle: "Создавай дизайн",
-    studioPreviewAccent: "прямо в браузере",
-    studioPreviewSubtitle: "Интерактивный конструктор — перемещай принт, меняй размер и цвет одежды прямо на мокапе. Никакого скачивания.",
-    mobileTitle: "Работает на",
-    mobileAccent: "любом устройстве",
-    mobileSubtitle: "Полноценный редактор дизайна прямо в браузере смартфона. Создавай, редактируй и заказывай без приложений.",
   },
   about: {
     title: "О нас",
@@ -360,59 +356,60 @@ const tg: Dictionary = {
     heroTitle1: "Тарроҳии беназири",
     heroAccent: "либоси худро бисоз",
     heroSubtitle:
-      "Расмро бор кун, онро бо ёрии AI тағйир деҳ ё аз нав бисоз. Натиҷаро дар футболка ё худӣ бубин ва чопро фармоиш деҳ.",
+      "Расмро бор кун, идея нависед ё ба AI бовар кунед — мо тарроҳие месозем, ки танҳо аз они ту хоҳад буд. Натиҷаро дар футболка ё худӣ бубин ва чопро фармоиш деҳ.",
     ctaPrimary: "Тарроҳӣ сохтан",
     ctaSecondary: "Намунаҳоро дидан",
-    aiEditorLabel: "AI-муҳаррир",
-    aiEditorPlaceholder: "Тавсиф кун, ки чиро тағйир додан мехоҳӣ",
-    aiEditorPrompt: "Эффекти неонӣ илова кун",
+    heroFeatures: [
+      "AI тарроҳӣ дар сонияҳо",
+      "Сифати олии чоп",
+      "Расонидани тез",
+      "Раванди осони сохтан",
+    ],
+    heroGenLabel: "AI генератор",
+    heroGenPlaceholder: "Идеяи тарроҳиро тавсиф кунед…",
+    heroColorLabel: "Ранги футболка",
+    heroSizeLabel: "Андоза",
     generate: "Эҷод кардан",
     howTitle: "Чӣ тавр кор",
     howAccent: "мекунад",
     steps: [
-      { title: "Расм бор кун ё идея нависед", desc: "Аз расм ё тавсифи матнӣ оғоз кунед" },
-      { title: "AI тасвирро месозад ё тағйир медиҳад", desc: "Зеҳни сунъӣ ҳама чизро дар сонияҳо мекунад" },
-      { title: "Тарроҳиро дар либос ҷойгир кун", desc: "Мавқеъ, андоза ва ранги чопро танзим кунед" },
+      { title: "Расм бор кун ё идея нависед", desc: "Аз расм оғоз кунед ё тавсиф ворид кунед" },
+      { title: "AI тасвирро месозад ё тағйир медиҳад", desc: "Зеҳни сунъӣ тарроҳии беназир эҷод мекунад" },
+      { title: "Тарроҳиро дар либос ҷойгир кун", desc: "Либос, ранг интихоб кунед ва мавқеъро танзим кунед" },
       { title: "Фармоиши тайёрро бигир", desc: "Мо чоп, баста ва мерасонем" },
     ],
     examplesTitle: "Намунаҳои",
     examplesAccent: "тарроҳӣ",
-    examples: ["Самурай", "Аниме", "Кайҳон", "Мошинҳо", "Минимализм", "Кӯҳҳо"],
+    examplesViewAll: "Ҳамаи намунаҳоро дидан",
+    examples: ["Самурай", "Аниме", "Киберпанк", "Мошинҳо", "Кӯҳҳо", "Кайҳон"],
     advantagesTitle: "Чаро",
     advantagesAccent: "PrintMe",
     advantages: [
-      { title: "AI эҷод", desc: "Сохтани тарроҳӣ дар чанд дақиқа" },
-      { title: "Чопи олӣ", desc: "Рангҳои зебо ва тафсилоти баланд" },
-      { title: "Расонидани тез", desc: "Расонидан дар шаҳр ҳар рӯз" },
-      { title: "Бастабандии хотирмон", desc: "Ҳар фармоиш мисли тӯҳфа аст" },
+      { title: "AI эҷод", desc: "Тарроҳиҳои беназир дар чанд сония" },
+      { title: "Чопи олӣ", desc: "Рангҳои равшан ва тафсилоти баланд" },
+      { title: "Расонидани тез", desc: "Фармоишҳоро ҳар рӯз дар шаҳр мерасонем" },
+      { title: "Бастабандии хотирмон", desc: "Ҳар фармоиш мисли тӯҳфа меояд" },
     ],
     packagingTitle: "Кушодани баста қисми эҳсос аст",
     packagingText:
-      "Мо мехоҳем, ки кушодани баста қисми эҳсос бошад. Қуттӣ, стикерҳо, thank you card ва QR ба шабакаҳои мо — ҳар фармоиш мисли тӯҳфа аст.",
+      "Мо ба ҳар ҷузъиёт диққат медиҳем. Қуттӣ, стикерҳо, варақаи миннатдорӣ ва QR-код ба шабакаҳои мо — ҳар фармоиш мисли тӯҳфа меояд.",
     packagingItems: ["Thank you card", "Стикерҳо", "QR Instagram", "QR Telegram"],
+    stats: [
+      { value: "2 500+", label: "Мизоҷони розӣ" },
+      { value: "15 000+", label: "Тарроҳиҳои сохташуда" },
+      { value: "24 соат", label: "Вақти миёнаи расонидан" },
+      { value: "4.9 / 5", label: "Баҳои миёна" },
+    ],
     reviewsTitle: "Мизоҷон чӣ",
     reviewsAccent: "мегӯянд",
+    reviewsViewAll: "Ҳамаи шарҳҳоро дидан",
     reviews: [
-      { name: "Алишер Р.", city: "Душанбе", product: "Худӣ бо аниме", rating: 5, text: "Худӣ бо аниме-персонаж фармоиш додам. Чоп ровна, рангҳо баъд аз шустан ҳам равшанд. Бастабандӣ ҳайратовар буд — дохилаш варақа ва стикерҳо!" },
-      { name: "Мадина К.", city: "Хуҷанд", product: "Футболкаи минималистӣ", rating: 5, text: "Тарроҳиро дар 5 дақиқа сохтам — хеле осон. Футболка баъди 2 рӯз омад. Матои зич, чоп дақиқ. Фармоиши дуюмро ҳам мехоҳам." },
-      { name: "Тимур А.", city: "Бохтар", product: "Футболка бо самурай", rating: 5, text: "Ба сифати тӯҳфа гирифтам. Дӯстам хеле хурсанд шуд! Чопи DTF аъло, расм тафсилотнок. Хидмат беҳтарин." },
+      { name: "Алишер", handle: "@alisher_tm", product: "Футболка бо самурай", rating: 5, text: "Тарроҳиро дар як дақиқа сохтам — садҳо таъриф гирифтам. Сифат аъло!" },
+      { name: "Мадина", handle: "@madina.a", product: "Худӣ бо аниме", rating: 5, text: "Ин беҳтарин тӯҳфа барои дӯстам буд! Ӯ хеле хурсанд шуд." },
+      { name: "Тимур", handle: "@timur.kg", product: "Худӣ киберпанк", rating: 5, text: "Конструктори хеле қулай ва расонидани тез. Боз фармоиш медиҳам!" },
     ],
     finalTitle: "Тарроҳии ту. Достони ту.",
     finalText: "Либоси беназирро ҳамин имрӯз бисоз.",
-    heroStripLabels: ["Аниме", "Самурай", "Киберпанк", "Мошин"],
-    trustTitle: "Ба мо",
-    trustAccent: "боварӣ доранд",
-    trustStats: [
-      { value: "1 200+", label: "фармоишҳои иҷрошуда" },
-      { value: "24 соат", label: "вақти миёнаи истеҳсол" },
-      { value: "4.9 / 5", label: "рейтинги мизоҷон" },
-    ],
-    studioPreviewTitle: "Тарроҳиро",
-    studioPreviewAccent: "дар браузер созед",
-    studioPreviewSubtitle: "Муҳаррири интерактивӣ — чопро ҷобаҷо кунед, андозаро тағйир диҳед ва ранги либосро иваз кунед.",
-    mobileTitle: "Дар ҳар",
-    mobileAccent: "дастгоҳ кор мекунад",
-    mobileSubtitle: "Муҳаррири пурраи тарроҳӣ дар браузери смартфон. Бидуни боргузорӣ созед, таҳрир кунед ва фармоиш диҳед.",
   },
   about: {
     title: "Дар бораи мо",
